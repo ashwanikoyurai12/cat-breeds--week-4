@@ -84,11 +84,7 @@ function updateUI() {
 
 function moveTo(index, animate = true) {
   track.style.transition = animate ? "" : "none";
-
-  const totalSlides = realSlideCount + 2;
-  const offset = (index * 100) / totalSlides;
-
-  track.style.transform = `translateX(-${offset}%)`;
+  track.style.transform = `translateX(-${index * 100}%)`;
   currentIndex = index;
   updateUI();
 }
