@@ -84,7 +84,12 @@ function updateUI() {
 
 function moveTo(index, animate = true) {
   track.style.transition = animate ? "" : "none";
-  track.style.transform = `translateX(-${index * 100}%)`;
+
+  const slideWidth = slides[0].getBoundingClientRect().width;
+
+  track.style.transform =
+    `translateX(-${index * slideWidth}px)`;
+
   currentIndex = index;
   updateUI();
 }
@@ -150,3 +155,6 @@ if (tickerRoot) new Ticker(tickerRoot);
 createClones();
 createDots();
 moveTo(1, false);
+window.addEventListener("resize", () => {
+  moveTo(currentIndex, false);
+});
