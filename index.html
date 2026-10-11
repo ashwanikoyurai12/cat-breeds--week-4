@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore different cat breeds in a responsive image slider made with HTML, CSS, and JavaScript.">
+    <title>Different Breeds of Cats | Cat Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="slider.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <p class="logo">Paws &amp; Whiskers</p>
+            <nav aria-label="Main navigation">
+                <ul id="primary-nav">
+                    <li><a href="#main-content">Cat Gallery</a></li>
+                    <li><a href="#about">About Breeds</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="wrapper">
+        <section class="intro">
+            <p class="tagline">A LITTLE WORLD OF CATS</p>
+            <h1>Different Breeds of Cats</h1>
+            <p>Explore six cat breeds featured in Purina UK’s Cat Breed Library, with a responsive, looping image slider.</p>
+        </section>
+
+        <section class="gallery-section" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Meet the Breeds</h2>
+            <p class="section-intro">Use the arrows or choose a dot to explore each breed. The photos are illustrative examples; follow the Purina links for breed-specific information.</p>
+
+            <section class="slider" aria-label="Cat breed image slider" tabindex="0">
+                <div class="slider-window">
+                    <div class="slider-track">
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Representative cat photograph for the Maine Coon breed">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Representative cat photograph for the Siamese breed">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Representative cat photograph for the British Shorthair breed">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Representative cat photograph for the Bengal breed">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Representative cat photograph for the Persian breed">
+                        </div>
+                        <div class="slide">
+                            <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Representative cat photograph for the Abyssinian breed">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slider-button previous-button" type="button" aria-label="Previous cat breed">&#10094;</button>
+                <button class="slider-button next-button" type="button" aria-label="Next cat breed">&#10095;</button>
+                <div class="slider-dots" aria-label="Choose a cat breed"></div>
+            </section>
+
+            <p class="slider-status" aria-live="polite">Cat breed 1 of 6</p>
+            <p class="breed-description" aria-live="polite">A large, long-haired cat with a muscular build, tufted ears, and a thick coat.</p>
+            
+        </section>
+
+        <section id="about" class="about">
+            <h2>Why are cat breeds different?</h2>
+            <p>Cat breeds vary in coat length, colour, body shape, temperament, and grooming needs. Breed descriptions are general guides: every cat has its own character and care requirements. The breed names and short summaries in this slider are based on Purina UK’s Cat Breed Library.</p>
+            <p class="source-note">Source: Purina UK — Cat Breed Library. The photos are illustrative and are not guaranteed to show verified pedigree examples.</p>
+        </section>
+
+        <section class="ticker" aria-label="Cat facts">
+            <h2 class="ticker-title">Quick Cat Fact</h2>
+            <div class="ticker-window">
+                <ul class="ticker-track">
+                    <li>Maine Coons are large cats with long, thick coats and tufted ears.</li>
+                    <li>Siamese cats are known for their pointed coat pattern and social nature.</li>
+                    <li>Bengal cats have a sleek, muscular look and distinctive patterned coats.</li>
+                </ul>
+            </div>
+            <button class="ticker-next" type="button">Next cat fact</button>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>Made with HTML, CSS, and vanilla JavaScript · <span class="year"></span> · Breed information reference: Purina UK</p>
+        </div>
+    </footer>
+</body>
+</html>
