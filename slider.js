@@ -84,7 +84,11 @@ function updateUI() {
 
 function moveTo(index, animate = true) {
   track.style.transition = animate ? "" : "none";
-  track.style.transform = `translateX(-${index * 100}%)`;
+
+  const totalSlides = realSlideCount + 2;
+  const offset = (index * 100) / totalSlides;
+
+  track.style.transform = `translateX(-${offset}%)`;
   currentIndex = index;
   updateUI();
 }
@@ -121,17 +125,14 @@ track.addEventListener("transitionend", (event) => {
 nextButton.addEventListener("click", nextSlide);
 prevButton.addEventListener("click", prevSlide);
 
-// Keyboard arrow support, using the slider as the interaction region.
 document.querySelector(".slider").addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") nextSlide();
   if (event.key === "ArrowLeft") prevSlide();
 });
 
-// The class reference also demonstrates updating a footer year dynamically.
 const year = document.querySelector(".year");
 if (year) year.textContent = new Date().getFullYear();
 
-// A small vertical ticker adapted from the reference Ticker class.
 class Ticker {
   constructor(root) {
     this.track = root.querySelector(".ticker-track");
@@ -150,7 +151,6 @@ class Ticker {
 const tickerRoot = document.querySelector(".ticker");
 if (tickerRoot) new Ticker(tickerRoot);
 
-// Set up the slider after all handlers and functions are defined.
 createClones();
 createDots();
 moveTo(1, false);
